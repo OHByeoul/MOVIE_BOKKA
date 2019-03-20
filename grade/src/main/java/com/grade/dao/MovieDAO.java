@@ -49,7 +49,7 @@ public class MovieDAO {
 			preparedStatement.setInt(1, movieInfo.getM_code());
 			preparedStatement.setString(2, movieInfo.getM_title());
 			preparedStatement.setString(3, movieInfo.getM_img());
-			preparedStatement.setFloat(4, movieInfo.getM_userRating());
+			preparedStatement.setString(4, movieInfo.getM_userRating());
 			preparedStatement.setString(5, movieInfo.getM_story());
 			result = preparedStatement.executeUpdate();
 			

@@ -72,7 +72,7 @@ public class MovieController extends HttpServlet {
 			int code = Integer.parseInt(request.getParameter("code"));
 			String title = request.getParameter("title");
 			String img = request.getParameter("img");
-			float userRating = Float.parseFloat(request.getParameter("userRating"));			
+			String userRating = request.getParameter("userRating");			
 			MovieInfo movieInfo = new MovieInfo(code,title,img,userRating);
 			
 			//String genre = request.getParameter("genre");
