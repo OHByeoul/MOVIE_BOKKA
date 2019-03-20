@@ -1,0 +1,65 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>BoardController</servlet-name>
+  	<display-name>BoardController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.BoardController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LoginController</servlet-name>
+  	<display-name>LoginController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.LoginController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PagingController</servlet-name>
+  	<display-name>PagingController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.PagingController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DetailController</servlet-name>
+  	<display-name>DetailController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.DetailController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CommentController</servlet-name>
+  	<display-name>CommentController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.CommentController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CrawlingController</servlet-name>
+  	<display-name>CrawlingController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.CrawlingController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MovieController</servlet-name>
+  	<display-name>MovieController</display-name>
+  	<description></description>
+  	<servlet-class>com.grade.controller.MovieController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PagingController</servlet-name>
+  	<url-pattern>/paging</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DetailController</servlet-name>
+  	<url-pattern>/detail</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CommentController</servlet-name>
+  	<url-pattern>/addComment</url-pattern>
+  </servlet-mapping>
+ 
+	<welcome-file-list>
+		<welcome-file>./WEB-INF/view/login.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
