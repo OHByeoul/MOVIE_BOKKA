@@ -20,7 +20,7 @@ import com.grade.vo.GetMovieInfoForm;
 /**
  * Servlet implementation class CrawlingController
  */
-@WebServlet(urlPatterns = { "/movie/findMovie", "/movie/searchMovieName", "/movie/searchDetail", "/movie/getInfo","/movie/getMovieInfo"})
+@WebServlet(urlPatterns = { "/movie/searchMovieName", "/movie/getInfo","/movie/getMovieInfo"})
 public class MovieController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	MovieService movieService;
@@ -48,7 +48,6 @@ public class MovieController extends HttpServlet {
 		String path = uri.substring(projectPath.length(), uri.length());
 		System.out.println("path : " + path);
 		if (path.equals("/movie/searchMovieName")) {
-
 			try {
 				request.getRequestDispatcher("/WEB-INF/view/findMovie.jsp").forward(request, response);
 			} catch (ServletException e) {
@@ -57,39 +56,6 @@ public class MovieController extends HttpServlet {
 				e.printStackTrace();
 			}
 
-		} else if (path.equals("/movie/findMovie")) {
-			String movieName = request.getParameter("movieName");
-			List detailNames = new ArrayList<String>();
-			uri = request.getRequestURI();
-			System.out.println(uri);
-			movieService.findMovie(movieName);
-			detailNames = movieService.getMovieDetailName();
-			// request.setAttribute("detailNames", detailNames);
-			response.setContentType("application/json");
-			response.setCharacterEncoding("UTF-8");
-			JsonMaker maker = new JsonMaker();
-			String json = maker.convertObjectToJson(detailNames);
-			try {
-				response.getWriter().write(json);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} else if (path.equals("/movie/searchDetail")) {
-			String movieCode = request.getParameter("movieCode");
-			MovieInfo movieInfo = new MovieInfo();
-//			movieInfo = movieService.findDetailInfo(movieCode);
-			request.setAttribute("movieInfo", movieInfo);
-
-			try {
-				request.getRequestDispatcher("/WEB-INF/view/movieDetailInfo.jsp").forward(request, response);
-			} catch (ServletException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		} else if(path.equals("/movie/getInfo")) {
 			String movieName = request.getParameter("movieName");
 			String json = movieService.getMovieDetailInfo(movieName);
@@ -106,7 +72,7 @@ public class MovieController extends HttpServlet {
 			int code = Integer.parseInt(request.getParameter("code"));
 			String title = request.getParameter("title");
 			String img = request.getParameter("img");
-			String userRating = request.getParameter("userRating");
+			float userRating = Float.parseFloat(request.getParameter("userRating"));			
 			MovieInfo movieInfo = new MovieInfo(code,title,img,userRating);
 			
 			//String genre = request.getParameter("genre");

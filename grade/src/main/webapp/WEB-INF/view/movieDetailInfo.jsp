@@ -35,5 +35,8 @@
 			</tr>
 		</c:forEach>
 	</div>
+	<div>
+		${movieInfoForm.m_story}
+	</div>
 </body>
 </html>

@@ -4,16 +4,15 @@ public class MovieInfo {
 	private int m_code;
 	private String m_title;
 	private String m_img;
-	private int m_userRating;
+	private float m_userRating;
 	private String m_story;
 
 
-	public MovieInfo(int code, String title, String img, String story) {
+	public MovieInfo(int code, String title, String img, float userRating) {
 		this.m_code = code;
 		this.m_title = title;
 		this.m_img = img;
-		this.m_story = story;
-		this.m_img = img;
+		this.m_userRating = userRating;
 	}
 	
 	public int getM_code() {
@@ -40,7 +39,7 @@ public class MovieInfo {
 		this.m_img = m_img;
 	}
 	
-	public int getM_userRating() {
+	public float getM_userRating() {
 		return m_userRating;
 	}
 	
@@ -54,10 +53,5 @@ public class MovieInfo {
 	
 	public void setM_story(String m_story) {
 		this.m_story = m_story;
-	}
-	
-	public MovieInfo() {
-		
-	}
-	
+	}	
 }

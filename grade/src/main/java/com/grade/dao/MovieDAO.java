@@ -49,7 +49,7 @@ public class MovieDAO {
 			preparedStatement.setInt(1, movieInfo.getM_code());
 			preparedStatement.setString(2, movieInfo.getM_title());
 			preparedStatement.setString(3, movieInfo.getM_img());
-			preparedStatement.setInt(4, movieInfo.getM_userRating());
+			preparedStatement.setFloat(4, movieInfo.getM_userRating());
 			preparedStatement.setString(5, movieInfo.getM_story());
 			result = preparedStatement.executeUpdate();
 			
@@ -104,7 +104,7 @@ public class MovieDAO {
 				getMovieInfoForm.setM_code(rs.getInt("m_code"));
 				getMovieInfoForm.setM_title(rs.getString("m_title"));
 				getMovieInfoForm.setM_img(rs.getString("m_img"));
-				getMovieInfoForm.setM_userRating(rs.getInt("m_userRating"));
+				getMovieInfoForm.setM_userRating(rs.getFloat("m_userRating"));
 				getMovieInfoForm.setM_story(rs.getString("m_story"));
 			}
 			getMovieInfoForm.setActor(getActorInfo(movieCode));

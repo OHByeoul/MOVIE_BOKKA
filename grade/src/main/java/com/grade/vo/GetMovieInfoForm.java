@@ -7,7 +7,7 @@ public class GetMovieInfoForm {
 	private int m_code;
 	private String m_title;
 	private String m_img;
-	private int m_userRating;
+	private float m_userRating;
 	private String m_story;
 	private List<String> actor;
 	private List<String> director;
@@ -41,11 +41,11 @@ public class GetMovieInfoForm {
 		this.m_img = m_img;
 	}
 
-	public int getM_userRating() {
+	public float getM_userRating() {
 		return m_userRating;
 	}
 
-	public void setM_userRating(int m_userRating) {
+	public void setM_userRating(float m_userRating) {
 		this.m_userRating = m_userRating;
 	}
 
