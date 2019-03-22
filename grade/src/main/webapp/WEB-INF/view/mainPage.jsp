@@ -35,7 +35,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">홈</a></li>
-        <li><a href="#">영화줄거리</a></li>
+        <li><a href="/grade/movie/searchMovieName">영화정보</a></li>
         <li><a href="#">영화리뷰게시판</a></li>
         <li><a href="#">자유게시판</a></li>
       </ul>

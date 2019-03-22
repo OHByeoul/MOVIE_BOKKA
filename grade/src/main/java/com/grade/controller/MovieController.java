@@ -49,7 +49,7 @@ public class MovieController extends HttpServlet {
 		System.out.println("path : " + path);
 		if (path.equals("/movie/searchMovieName")) {
 			try {
-				request.getRequestDispatcher("/WEB-INF/view/findMovie.jsp").forward(request, response);
+				request.getRequestDispatcher("/WEB-INF/view/test.jsp").forward(request, response);
 			} catch (ServletException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -58,6 +58,7 @@ public class MovieController extends HttpServlet {
 
 		} else if(path.equals("/movie/getInfo")) {
 			String movieName = request.getParameter("movieName");
+			System.out.println("movieName : "+movieName);
 			String json = movieService.getMovieDetailInfo(movieName);
 			System.out.println(json+" "+movieName);
 			response.setContentType("application/json");
